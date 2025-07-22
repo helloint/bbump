@@ -1,0 +1,17 @@
+{
+  "name": "bumpb",
+  "version": "1.0.0",
+  "description": "Bump version based on branch prefix",
+  "main": "src/index.mjs",
+  "bin": {
+    "bumpb": "src/index.mjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "helloint",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^9.0.0"
+  }
+}
