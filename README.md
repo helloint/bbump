@@ -1,10 +1,10 @@
 # Bump Version based on branch prefix
 > Smart version bumper for npm packages with branch-aware defaults
 
-`bumpb`, `b` represents `branch`
+`bbump`, the prefix `b` represents `branch`
 
-[![npm version](https://img.shields.io/npm/v/bumpb)](https://www.npmjs.com/package/bumpb)
-[![license](https://img.shields.io/npm/l/bumpb)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/bbump)](https://www.npmjs.com/package/bbump)
+[![license](https://img.shields.io/npm/l/bbump)](LICENSE)
 
 ## Features
 
@@ -16,30 +16,30 @@
 
 ## Installation
 
-You can use `npx bumpb` without installation (recommended). This way, you can always get latest version.
+You can use `npx bbump` without installation (recommended). This way, you can always get latest version.
 
 Or Install it as a dev dependency:
 
 ```bash
-npm install -D bumpb
+npm install -D bbump
 ```
 or
 ```bash
-yarn add -D bumpb
+yarn add -D bbump
 ```
 
 ## Usage
 Run in your project directory:
 
 ```bash
-npx bumpb
+npx bbump
 ```
 
 Or add `script` to your `package.json`:
 ```json
 {
   "scripts": {
-    "bumpVersion": "npx bumpb"
+    "bumpVersion": "npx bbump"
   }
 }
 ```
@@ -48,7 +48,7 @@ Or if you installed as dev dependency:
 ```json
 {
   "scripts": {
-    "bumpVersion": "bumpb"
+    "bumpVersion": "bbump"
   }
 }
 ```
