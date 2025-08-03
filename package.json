@@ -2,12 +2,14 @@
   "name": "bbump",
   "version": "1.0.0",
   "description": "Bump version based on branch prefix",
-  "main": "src/index.mjs",
+  "main": "index.js",
+  "type": "module",
   "bin": {
-    "bbump": "src/index.mjs"
+    "bbump": "index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bumpVersion": "node index.js"
   },
   "author": "helloint",
   "license": "MIT",
