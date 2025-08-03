@@ -12,6 +12,10 @@
     "bumpVersion": "node index.js"
   },
   "author": "helloint",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helloint/bbump.git"
+  },
   "license": "MIT",
   "dependencies": {
     "inquirer": "^9.0.0"
