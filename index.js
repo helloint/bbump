@@ -36,10 +36,15 @@ try {
 
     // Add only package.json and lockfile to Git
     const lockfile = isYarn ? 'yarn.lock' : 'package-lock.json';
-    execSync(`git add package.json ${lockfile}`, { stdio: 'inherit' });
+    const filesToAdd = ['package.json'];
+    if (existsSync(lockfile)) {
+        filesToAdd.push(lockfile);
+    }
+
+    execSync(`git add ${filesToAdd.join(' ')}`, { stdio: 'inherit' });
 
     // Commit only the specified files with a fixed commit message
-    execSync(`git commit -m "chore: bump version" package.json ${lockfile}`, { stdio: 'inherit' });
+    execSync(`git commit -m "chore: bump version" ${filesToAdd.join(' ')}`, { stdio: 'inherit' });
 
     console.log(`Version bumped to ${versionType} and changes committed with message: 'chore: bump version'.`);
 } catch (error) {
