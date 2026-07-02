@@ -1,6 +1,6 @@
 {
   "name": "bbump",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Bump version based on branch prefix",
   "main": "index.js",
   "type": "module",
