@@ -5,6 +5,9 @@ import inquirer from 'inquirer';
 
 // Check if the project uses Yarn (by checking for yarn.lock)
 const isYarn = existsSync('yarn.lock');
+// Yarn berry (v2+) signals: .yarnrc.yml config or .yarn/ cache/version folder.
+// Yarn classic (1.x) uses .yarnrc (no .yml) and no .yarn/ directory.
+const isYarnBerry = existsSync('.yarnrc.yml') || existsSync('.yarn');
 
 // Get the current branch name
 const currentBranch = execSync('git branch --show-current', { encoding: 'utf-8' }).trim();
@@ -29,8 +32,12 @@ const { versionType } = await inquirer.prompt(questions);
 
 try {
     // Execute version command based on the package manager
+    // Yarn berry (v2+) uses positional strategy arg and does not create git tags.
+    // Yarn classic (1.x) uses --<strategy> --no-git-tag-version.
     const versionCommand = isYarn
-        ? `yarn version --${versionType} --no-git-tag-version`
+        ? (isYarnBerry
+            ? `yarn version ${versionType}`
+            : `yarn version --${versionType} --no-git-tag-version`)
         : `npm version ${versionType} --no-git-tag-version`;
     execSync(versionCommand, { stdio: 'inherit' });
 
